@@ -13,11 +13,13 @@
 
 # Install GitLab and its dependencies.
 - name: Install GitLab dependencies.
+  become: true
   package:
     name: "{{ gitlab_dependencies }}"
     state: present
 
 - name: Install GitLab dependencies (Debian).
+  become: true
   apt:
     name: gnupg2
     state: present
